@@ -42,4 +42,5 @@ dat %>%
   group_by(subject, activity) %>%
   summarize_each(funs(mean)) ->
   tidy
-rm(dat)
+write.table(tidy, file = "tidy.txt", row.names = FALSE)
+rm(dat, tidy)
