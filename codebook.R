@@ -15,4 +15,5 @@ codebook <- data.frame("original"=nms_org,
                        "units"=units,
                        stringsAsFactors = FALSE)
 codebook <- rbind(c("Original Set", "Tidy Set", "Units"),c("---","---","---"),codebook)
-write.table(codebook, file = "CODEBOOK.md", sep = "|", row.names = FALSE, col.names = FALSE)
+write.table(codebook, file = "CODEBOOK.md", quote = FALSE, sep = "|", row.names = FALSE, col.names = FALSE)
+rm(nms_new, nms_org, units)
