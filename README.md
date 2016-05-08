@@ -7,3 +7,6 @@ First, the files containing the subject's identifying numbers, the associated ac
 
 Finally, the data is grouped so that each subject doing a given activity makes a single observation. For each row that is the same subjectr and activity, the mean of each measurement is calculated.  The script then writes the simplified table to a file named "tidy.txt"
 # Codebook
+The actual codbook is located in the separate CODEBOOK.md file. This file is generated from the coodebook.R script.
+
+The codebook contains separate columns.  The first is for all of the column names in the original X_train.txt and X_test.txt files, with the first two left blank.  The second column is the names of the columns in the tidy dataset.  NA'ed names have been removed from the tidy data set. The third column is the untis for the tidy data set. The units are taken from the descriptions in the README.txt file in the original dataset.
