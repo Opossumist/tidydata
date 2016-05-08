@@ -1,5 +1,6 @@
 # This script generates the codebook. Assuming that this file is in the same directory as run_analysis.R
-# and that features.txt still contains similar descriptions of the original data.
+# and that features.txt still contains similar descriptions of the original data.  It will produce
+# a table that is meant to be read in markdown.
 nms_org <- as.character(read.table("./UCI HAR Dataset/features.txt")[,2])
 nms_new <- c("subject","activity",nms_org)
 nms_org <- c(NA,NA,nms_org)
@@ -9,4 +10,9 @@ units <- c()
 units[grep("Acc", nms_new)] <- "g"
 units[grep("Gyro", nms_new)] <- "rad/s"
 units[length(units):length(nms_org)] <- NA
-codebook <- data.frame("original set"=nms_org,"tidy set"=nms_new, "units"=units)
+codebook <- data.frame("original"=nms_org,
+                       "tidy"=nms_new,
+                       "units"=units,
+                       stringsAsFactors = FALSE)
+codebook <- rbind(c("Original Set", "Tidy Set", "Units"),c("---","---","---"),codebook)
+write.table(codebook, file = "CODEBOOK.md", sep = "|", row.names = FALSE, col.names = FALSE)
