@@ -1,5 +1,5 @@
 original|tidy|units
-"---"|"---"|"---"
+---|---|---
 NA|"subject"|NA
 NA|"activity"|NA
 "tBodyAcc-mean()-X"|"tBodyAcc-mean-X"|"g"
