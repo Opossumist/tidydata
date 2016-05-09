@@ -1,5 +1,8 @@
-# This script assumes the appropriate data files were downloaded and unzipped, and the working
-# directory is set to the directory with the files.
+if(!file.exists(".UCI HAR Dataset")) {
+  url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+  download.file(url, zipped, method = "curl")
+  unzip (zipped)}
+
 # This section begins to assemble together all of the raw data in the files. The training
 # set of data is assembled from the subject list, the activity list, and the data. The 
 # test data is put together the same way into a separate table.  The training set is then
