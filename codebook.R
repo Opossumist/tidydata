@@ -1,7 +1,7 @@
 if(!file.exists("./UCI HAR Dataset/")) {
   url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-  download.file(url, zipped, method = "curl")
-  unzip (zipped)}
+  download.file(url, data.zip, method = "curl")
+  unzip (data.zip)}
 
 nms_org <- as.character(read.table("./UCI HAR Dataset/features.txt")[,2])
 nms_new <- c("subject","activity",nms_org)

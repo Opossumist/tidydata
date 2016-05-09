@@ -1,7 +1,7 @@
 if(!file.exists("./UCI HAR Dataset/")) {
   url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-  download.file(url, zipped, method = "curl")
-  unzip (zipped)}
+  download.file(url, data.zip, method = "curl")
+  unzip (data.zip)}
 
 # This section begins to assemble together all of the raw data in the files. The training
 # set of data is assembled from the subject list, the activity list, and the data. The 
