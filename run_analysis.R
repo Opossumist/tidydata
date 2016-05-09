@@ -21,6 +21,8 @@ rm(testset,trainset)
 # to the required data columns only.
 names <- as.character(read.table("./UCI HAR Dataset/features.txt")[,2])
 names <- gsub("[()]", "", names)
+names <- gsub("-","",names)
+names <- tolower(names)
 colnames(combinedset) <- c("subject",
                            "activity",
                            names)
@@ -38,9 +40,10 @@ rm(act_vect, i, lbls)
 
 # The data is then grouped by subject and activity, and the mean calculated for each pair, and
 # made into a data table, which can then be written to a file.
+library(dplyr)
 dat %>%
   group_by(subject, activity) %>%
   summarize_each(funs(mean)) ->
   tidy
 write.table(tidy, file = "tidy.txt", row.names = FALSE)
-rm(dat, tidy)
+# rm(dat, tidy)
