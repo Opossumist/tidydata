@@ -9,8 +9,8 @@ nms_new <- gsub("-","",nms_new)
 nms_new <- tolower(nms_new)
 nms_new[grep("subject|activity|mean|std", nms_new, invert = TRUE)] <- NA
 units <- c()
-units[grep("Acc", nms_new)] <- "g"
-units[grep("Gyro", nms_new)] <- "rad/s"
+units[grep("acc", nms_new)] <- "g"
+units[grep("gyro", nms_new)] <- "rad/s"
 units[length(units):length(nms_org)] <- NA
 codebook <- data.frame("original"=nms_org,
                        "tidy"=nms_new,
