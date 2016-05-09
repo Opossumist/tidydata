@@ -46,4 +46,4 @@ dat %>%
   summarize_each(funs(mean)) ->
   tidy
 write.table(tidy, file = "tidy.txt", row.names = FALSE)
-# rm(dat, tidy)
+rm(dat, tidy)
