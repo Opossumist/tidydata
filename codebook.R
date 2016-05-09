@@ -1,6 +1,8 @@
-# This script generates the codebook. Assuming that the working directory is the same as for run_analysis.R
-# and that features.txt still contains similar descriptions of the original data.  It will produce
-# a table that is meant to be read in markdown.
+if(!file.exists(".UCI HAR Dataset/")) {
+  url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+  download.file(url, zipped, method = "curl")
+  unzip (zipped)}
+
 nms_org <- as.character(read.table("./UCI HAR Dataset/features.txt")[,2])
 nms_new <- c("subject","activity",nms_org)
 nms_org <- c(NA,NA,nms_org)
