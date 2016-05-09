@@ -1,4 +1,4 @@
-# This script generates the codebook. Assuming that this file is in the same directory as run_analysis.R
+# This script generates the codebook. Assuming that the working directory is the same as for run_analysis.R
 # and that features.txt still contains similar descriptions of the original data.  It will produce
 # a table that is meant to be read in markdown.
 nms_org <- as.character(read.table("./UCI HAR Dataset/features.txt")[,2])
